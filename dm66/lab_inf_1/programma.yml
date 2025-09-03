@@ -1,0 +1,68 @@
+%YAML 1.2
+---
+durata: 10h
+lezioni:
+  - giorno: 2025-09-17
+    inizio: 14:00
+    fine: 19:00
+    luogo: FabLab
+  - giorno: 2025-09-18
+    inizio: 14:00
+    fine: 19:00
+    luogo: FabLab
+descrizione: Il laboratorio fornisce le informazioni di base per lavorare nel laboratorio informatico realizzato nel FabLab e presenta alcune lezioni laboratoriali sulle tematiche dei Sistemi Operativi, del Physical Computing e della Crittografia.
+programma:
+  - argomento: Familiarizzare con l'ambiente Linux del Raspberry Pi 5 ed esercitazione con i comandi di base della shell.
+    contenuto:
+      - titolo: Introduzione al Raspberry Pi
+      - titolo: Introduzione a Linux
+      - titolo: Introduzione alla shell
+      - titolo: "File system: file regolari e directory"
+        concetto:
+          - file regolari
+          - directory
+          - gerarchia del file system
+          - percorso assoluto e relativo
+          - comando `pwd`
+          - comando `ls`
+          - comando `cd`
+          - directory `..` e directory `.`
+          - separatore di directory `/`
+      - titolo: Lavorare con file e directory
+        concetto:
+          - comando `touch`
+          - comando `mkdir`
+          - comando `rm`
+          - comando `cp`
+          - comando `mv`
+          - "globbing: wildcards * e ?"
+          - caratteri di controllo e codice ASCII
+      - titolo: Redirezione e filtri
+        concetto:
+          - comando `cat`
+          - comando `head`
+          - comando `tail`
+          - comando `wc`
+          - comando `sort`
+      - titolo: Iterazioni
+        concetto: 
+          - comando `for`
+          - comando `while`
+          - muoversi nella storia della shell
+          - comando `history`
+          - ricerca nella storia della shell
+      - titolo: Scripting
+        concetto:
+          - Riuso dei comandi e automazione
+          - Funzioni e argomenti
+      - titolo: ricerca
+        concetto:
+          - comando `find`
+          - comando `grep`
+          - comandi `man`, `info`, `apropos`
+    riferimento:
+      - url: https://swcarpentry.github.io/shell-novice/01-intro.html
+      - url: https://sandbox.bio/tutorials/carpentries-shell-novice/1
+  - argomento: Introduzione al Physical Computing utilizzando i pin GPIO del Raspberry Pi per input/output digitale
+  - argomento: Introduzione ai concetti di hashing e crittografia simmetrica ed esercitazioni con sha1sum e OpenSSL su hashing crittografico, cifratura e decifratura con cifrari moderni a chiave simmetrica.
+  - argomento: Introduzione ai concetti di crittografia asimmetrica e ai protocolli crittografici ed esercitazioni con sha1sum, OpenSSL e GPG su creazione e gestione di chiavi crittografiche private e pubbliche, calcolo del "message digest", cifratura e decifratura con cifrari asimmetrici, scambio delle chiavi, firma e verifica delle firme di documenti in chiaro.
