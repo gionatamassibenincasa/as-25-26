@@ -1,0 +1,31 @@
+@startuml 
+' left to right direction
+hide circles
+hide empty methods
+
+class Utente  {
+   cognome
+   nome
+   dataNascita
+   nazionalita
+   email
+   dataScadenza
+}
+
+class Brano {
+  titolo
+  durataInSec
+  dataPubblicazione
+  uri
+}
+
+class Genere {
+  genere
+}
+
+class Album {
+  copertina
+  titolo
+  dataPubblicazione
+}
+@enduml
