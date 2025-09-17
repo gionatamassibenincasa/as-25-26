@@ -1,0 +1,58 @@
+@startuml 
+left to right direction
+hide circles
+hide empty methods
+
+title: MusicOmega - Modello concettuale
+
+class Utente  {
+   cognome
+   nome
+   dataNascita
+   nazionalita
+   email
+   dataScadenza
+}
+
+class Brano {
+  titolo
+  durataInSec
+  dataPubblicazione
+  uri
+}
+
+class Genere {
+  genere
+}
+
+class Album {
+  copertina
+  titolo
+  dataPubblicazione
+}
+
+class Artista {
+ nome
+ biografia
+ nazionalita 
+}
+
+class Playlist {
+  titolo
+  dataCreazione
+}
+
+class Ascolto {
+  inizio
+  like
+}
+
+Utente "1" -- "n" Playlist
+Playlist "n" -- "1" Brano
+Album "1" -- "n" Brano
+Brano "n" -- "n" Genere
+Brano "n" -- "1" Artista
+Album "n" -- "1" Artista
+Utente "1" -- "n" Ascolto
+Ascolto "n" -- "1" Brano
+@enduml
