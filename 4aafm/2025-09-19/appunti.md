@@ -6,16 +6,18 @@
 
 Si riferisce al testo in **grassetto** oppure in *corsivo*
 
-Si usa un `*` o un `_` per il testo in corsivo.
+* Si racchiude un testo tra `*` o `_` per renderlo *corsivo*.
 
-Si usano due `**` p `__` per il testo in grassetto.
+* Si racchiude un testo tra `**` o `__` per rendelo **grassetto**.
 
 #### Esempio
 
-* `*corsivo*`: *corsivo*
-* `__grassetto__`: __grassetto__.
+|MarkDown|HTML|Visualizzazione|
+|--------|----|---------------|
+|`*corsivo*`|`<em>corsivo</em>`|*corsivo*|
+|`__grassetto__`|`<strong>grassetto</strong>`|__grassetto__|
 
-#### Tag HTML
+#### Tag HTML associati
 
 * il *corsivo* viene compilato con il tag `em`.
 * il **grassetto** viene compilato con il tag `strong`.
