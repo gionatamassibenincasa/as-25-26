@@ -7,11 +7,11 @@ CREATE TABLE IF NOT EXISTS Artista (
 ---
 CREATE TABLE IF NOT EXISTS Album (
     idAlbum INTEGER PRIMARY KEY AUTOINCREMENT,
-    idArtista INTEGER,
+    -- idArtista INTEGER,
     copertina TEXT,
     titolo TEXT NOT NULL,
-    dataPubblicazione DATE,
-    FOREIGN KEY (idArtista) REFERENCES Artista(idArtista)
+    dataPubblicazione DATE
+    -- FOREIGN KEY (idArtista) REFERENCES Artista(idArtista)
 );
 ---
 CREATE TABLE IF NOT EXISTS Brano (
@@ -84,11 +84,11 @@ INSERT INTO Artista (nome, biografia, nazionalita) VALUES
 ('Imagine Dragons', 'Biografia di Imagine Dragons', 'Statunitense'),
 ('The Weeknd', 'Biografia di The Weeknd', 'Canadese');
 ---
-INSERT INTO Album (idArtista, copertina, titolo, dataPubblicazione) VALUES
-(1, 'copertina_album_1.jpg', 'Rave, eclissi', '2022-03-11'),
-(2, 'copertina_album_2.jpg', 'Colpa delle favole', '2019-04-05'),
-(3, 'copertina_album_3.jpg', 'Happier Than Ever', '2021-07-30'),
-(4, 'copertina_album_4.jpg', 'Mercury - Act 1', '2021-09-03');
+INSERT INTO Album (copertina, titolo, dataPubblicazione) VALUES
+('copertina_album_1.jpg', 'Rave, eclissi', '2022-03-11'),
+('copertina_album_2.jpg', 'Colpa delle favole', '2019-04-05'),
+('copertina_album_3.jpg', 'Happier Than Ever', '2021-07-30'),
+('copertina_album_4.jpg', 'Mercury - Act 1', '2021-09-03');
 ---
 INSERT INTO Brano (idArtista, idAlbum, titolo, durataInSec, dataPubblicazione, uri) VALUES
 (1, 1, 'Incontro occasionale', 185, '2022-02-02', 'uri_incontro_occasionale'),
