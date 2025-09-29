@@ -6,6 +6,7 @@ hide empty methods
 title: MusicOmega - Modello concettuale
 
 class Utente  {
+   idUtente {PK}
    cognome
    nome
    dataNascita
@@ -15,6 +16,7 @@ class Utente  {
 }
 
 class Brano {
+  idBrano {PK}
   titolo
   durataInSec
   dataPubblicazione
@@ -22,24 +24,31 @@ class Brano {
 }
 
 class Genere {
+  idGenere {PK}
   genere
 }
 
 class Album {
+  idAlbum {PK}
   copertina
   titolo
   dataPubblicazione
 }
 
 class Artista {
+idArtista {PK}
  nome
  biografia
  nazionalita 
 }
 
 class Playlist {
+  idPlaylist {PK}
   titolo
   dataCreazione
+}
+
+class BranoPlaylist {
 }
 
 class Ascolto {
@@ -48,11 +57,13 @@ class Ascolto {
 }
 
 Utente "1" -- "n" Playlist
-Playlist "n" -- "1" Brano
+Playlist "n" -- "1" BranoPlaylist
+BranoPlaylist "n" -- "1" Brano
 Album "1" -- "n" Brano
 Brano "n" -- "n" Genere
 Brano "n" -- "1" Artista
-Album "n" -- "1" Artista
+' Album "n" -- "1" Artista
+Note bottom of Album: Un album contiene brani di un solo artista
 Utente "1" -- "n" Ascolto
 Ascolto "n" -- "1" Brano
 @enduml

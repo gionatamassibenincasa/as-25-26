@@ -1,0 +1,83 @@
+@startuml
+left to right direction
+hide circles
+hide empty methods
+
+title: MusicOmega - Modello concettuale
+
+class Utente  {
+    idUtente {PK}
+    cognome
+    nome
+    dataNascita
+    nazionalita
+    email
+    dataScadenza
+}
+
+class Album {
+    idAlbum {PK}
+    copertina
+    titolo
+    dataPubblicazione
+}
+
+class Brano {
+    idBrano {PK}
+    idArtista {FK}
+    idAlbum {FK}
+    titolo
+    durataInSec
+    dataPubblicazione
+    uri
+}
+
+class Genere {
+    idGenere {PK}
+    genere
+}
+
+class Artista {
+    idArtista {PK}
+    nome
+    biografia
+    nazionalita
+}
+
+class Playlist {
+    idPlaylist {PK}
+    idUtente {FK}
+    titolo
+    dataCreazione
+}
+
+class BranoPlaylist {
+    idPlaylist {PK, FK}
+    idBrano {PK, FK}
+}
+
+class Ascolto {
+    idUtente {PK, FK}
+    idBrano {PK, FK}
+    inizio  {PK}
+    like
+}
+
+class BranoGenere {
+    idBrano {PK, FK}
+    idGenere {PK, FK}
+}
+
+
+Utente "1" -- "n" Playlist
+Playlist "1" -- "n" BranoPlaylist
+BranoPlaylist "n" -- "1" Brano
+Album "0..1" .- "n" Brano
+Brano "1" -- "n" BranoGenere
+Genere "1" -- "n" BranoGenere
+Brano "n" -- "1" Artista
+' Album "n" -- "1" Artista
+Note bottom of Album: Un album contiene brani di un solo artista
+Utente "1" -- "n" Ascolto
+Ascolto "n" -- "1" Brano
+@enduml
