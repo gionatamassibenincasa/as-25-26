@@ -1,0 +1,82 @@
+@startuml
+hide circle
+hide method
+
+class Anagrafica {
+  nome
+  cognome
+  denominazione
+  luogoNascita
+  dataNascita
+  CodiceFiscale
+  PartitaIVA
+  comune
+  indirizzo
+  civico
+  email
+  pec
+  telefono
+}
+
+class Gestore {
+  scadenzaContratto
+}
+
+class Produttore {
+  scadenzaContratto
+}
+
+Gestore -- "1" Anagrafica
+Produttore -- "1" Anagrafica
+
+class Negozio {
+  comune
+  indirizzo
+  civico
+  indirizzo
+}
+
+class CategoriaMerceologica {
+  categoria
+}
+
+class Modalita {
+  modalita
+}
+
+class SpazioEspositivo {
+  denominazione
+  locale
+  descrizione
+  condizioni
+  estensioneInMetri2
+  costoGiornaliero
+}
+
+Gestore "1" -- "n" Negozio : dispone >
+
+Negozio "1" -- "n" SpazioEspositivo : concede >
+Negozio "n" -- "n" CategoriaMerceologica
+(Negozio, CategoriaMerceologica) .. NegozioCategoria
+
+SpazioEspositivo "n" -- "1" Modalita
+class Evento {
+  titolo
+  descrizione
+  inizio
+  fine
+  luogo
+}
+
+class Calendario {
+  nome
+  organizzatore
+  descrizione
+}
+
+Evento "n" -- "1" Calendario
+
+SpazioEspositivo "1" -- "n" Calendario
+
+Evento "n" -- "1" Produttore
+@enduml
