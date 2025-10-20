@@ -1,6 +1,7 @@
 @startuml
 hide circle
 hide method
+left to right direction
 
 class Anagrafica {
   nome
@@ -26,14 +27,19 @@ class Produttore {
   scadenzaContratto
 }
 
-Gestore -- "1" Anagrafica
-Produttore -- "1" Anagrafica
+class Prodotto {
+  descrizione
+}
+
+Produttore "1" -- "n" Prodotto
+
+Gestore "0..1" .. "1" Anagrafica
+Produttore"0..1" .. "1" Anagrafica
 
 class Negozio {
   comune
   indirizzo
   civico
-  indirizzo
 }
 
 class CategoriaMerceologica {
@@ -53,20 +59,16 @@ class SpazioEspositivo {
   costoGiornaliero
 }
 
+class NegozioCategoria {
+}
+
 Gestore "1" -- "n" Negozio : dispone >
 
 Negozio "1" -- "n" SpazioEspositivo : concede >
 Negozio "n" -- "n" CategoriaMerceologica
 (Negozio, CategoriaMerceologica) .. NegozioCategoria
 
-SpazioEspositivo "n" -- "1" Modalita
-class Evento {
-  titolo
-  descrizione
-  inizio
-  fine
-  luogo
-}
+SpazioEspositivo "n" -- "1" Modalita : utilizzo >
 
 class Calendario {
   nome
@@ -74,9 +76,18 @@ class Calendario {
   descrizione
 }
 
-Evento "n" -- "1" Calendario
+class Evento {
+  titolo
+  descrizione
+  inizio
+  fine
+  luogo
+  stato
+}
+
+Evento "n" -- "1" Calendario : occupazione <
 
 SpazioEspositivo "1" -- "n" Calendario
 
-Evento "n" -- "1" Produttore
+Evento "n" -- "1" Prodotto : esposizione
 @enduml

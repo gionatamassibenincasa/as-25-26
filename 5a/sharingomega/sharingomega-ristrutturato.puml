@@ -32,7 +32,7 @@ class Produttore {
 
 class Prodotto {
   **id** <<PK>>
-  **idProduttore** <<FK>>
+  //idProduttore// <<FK>>
   descrizione
 }
 
@@ -43,10 +43,10 @@ Produttore"0..1" .. "1" Anagrafica
 
 class Negozio {
   **id** <<PK>>
+  //idGestore// <<FK>>
   comune
   indirizzo
   civico
-  indirizzo
 }
 
 class CategoriaMerceologica {
@@ -78,9 +78,8 @@ class NegozioCategoria {
 
 Gestore "1" -- "n" Negozio : dispone >
 
-Negozio "1" -- "n" SpazioEspositivo : concede >
-Negozio "n" -- "n" CategoriaMerceologica
-(Negozio, CategoriaMerceologica) .. NegozioCategoria
+Negozio "1" -- "n" NegozioCategoria
+NegozioCategoria "n" -- "1" CategoriaMerceologica
 
 SpazioEspositivo "n" -- "1" Modalita : utilizzo >
 
