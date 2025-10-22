@@ -6,7 +6,12 @@
  Si assume che il dato valore sia 51.0 tonnellate
  e che l'ultimo anno sia il periodo tra un anno fa e oggi.
 */
-SELECT A.denominazione, marcaTemporale, valore, unitaMisura, I.nome
+SELECT
+    A.denominazione,
+    marcaTemporale,
+    valore,
+    unitaMisura,
+    I.nome
 FROM
     Settore AS S INNER JOIN
     Azienda AS A ON S.id=A.idSettore INNER JOIN
