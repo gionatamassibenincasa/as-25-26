@@ -1,0 +1,73 @@
+@startuml
+hide circle
+hide methods
+
+title Portale sostenibilità aziendale
+
+class RagioneSociale {
+  **sigla**
+  nome
+}
+
+class Settore {
+  **id**
+  settore
+}
+
+class Provincia {
+  **sigla**
+  capoluogo
+}
+
+class Azienda {
+  **partitaIVA**
+  denominazione
+  //idRagioneSociale//
+  //idSettore//
+  //idProvincia//
+}
+
+Azienda "n" -- "1" RagioneSociale
+Azienda "n" -- "1" Settore
+Azienda "n" -- "1" Provincia
+
+class Indicatore {
+  **id**
+  nome
+  descrizione
+  unitaMisura
+}
+
+class Misurazione {
+  **id**
+  //partitaIVA//
+  //idIndicatore//
+  marcaTemporale
+  valore
+}
+
+Misurazione "n" -- "1" Azienda
+Misurazione "n" -- "1" Indicatore
+
+class Iniziativa {
+  **id**
+  //partitaIVA//
+  nome
+  descrizione
+  dataAvvio
+  durata
+}
+
+Azienda "1" -- "n" Iniziativa
+
+class Sanzione {
+  **id**
+  //partitaIVA//
+  importo
+  data
+  descrizione
+}
+
+Azienda "1" -- "n" Sanzione
+
+@enduml
