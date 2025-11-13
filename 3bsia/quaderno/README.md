@@ -19,6 +19,8 @@ import: https://raw.githubusercontent.com/liascript-templates/plantUML/master/RE
 
 # Il linguaggio C++
 
+[Visualizza su LiaScript](https://liascript.github.io/course/?https://raw.githubusercontent.com/gionatamassibenincasa/as-25-26/refs/heads/main/3bsia/quaderno/README.md#1)
+
 Appunti del capitolo 4 del libro di testo pp. 86--121.
 
 Per ogni programma presentato nel testo (pp. 86, 93, 98, 99, 103, 105, 106, 107, 109, 110, 112, 115, 118, 119, 121):
@@ -52,16 +54,16 @@ int main() {
 ```
 @LIA.cpp
 
-### 1. Predict (p. 86)
+#### 1. Predict (p. 86)
 
 Il programma dichiara tre variabili intere, `a`, `b` e `s`.
 Legge due numeri interi dati in ingresso memorizzandoli nelle variabili `a` e `b`, calcola la somma di queste due variabili memorizzandola in `s` e ne stampa il valore.
 
-### 2. Run (p. 86)
+#### 2. Run (p. 86)
 
 Il programma conferma la previsione
 
-### 3. Investigate (p. 86)
+#### 3. Investigate (p. 86)
 
 ``` cpp +Somma.cpp
 // Somma.cpp
@@ -87,7 +89,7 @@ Uso 1 e 2.
 <iframe width="800" height="500" frameborder="0" src="https://pythontutor.com/iframe-embed.html#code=%23include%20%3Ciostream%3E%0Ausing%20namespace%20std%3B%0A%0Aint%20main%28%29%20%7B%0A%20%20%20%20int%20a,%20b,%20s%3B%0A%20%20%20%20//cin%20%3E%3E%20a%3B%0A%20%20%20%20a%20%3D%201%3B%0A%20%20%20%20//cin%20%3E%3E%20b%3B%0A%20%20%20%20b%20%3D%202%3B%0A%20%20%20%20s%20%3D%20a%20%2B%20b%3B%0A%20%20%20%20cout%20%3C%3C%20s%3B%0A%0A%20%20%20%20return%200%3B%0A%7D&codeDivHeight=400&codeDivWidth=350&cumulative=false&curInstr=6&heapPrimitives=nevernest&origin=opt-frontend.js&py=cpp_g%2B%2B9.3.0&rawInputLstJSON=%5B%5D&textReferences=false"> </iframe>
 
 
-### 4. Modify  (p. 86)
+#### 4. Modify  (p. 86)
 
 Voglio aggiungere informazioni all'utente per comunicare di immettere i numeri intero, voglio essere più descrittivo e andare a capo nell'output.
 
@@ -110,7 +112,7 @@ int main() {
 ```
 @LIA.cpp
 
-### 5. Make (p. 86)
+#### 5. Make (p. 86)
 
 Scrivo un nuovo programma che calcola il prodotto.
 
