@@ -9,10 +9,11 @@ language: it
 
 narrator: IT Italian Male
 
-comment:  Quaderno elettronico di Informatica.
-Classe 3za. Capitolo 4. Il linguaggio C++.
+comment:  Quaderno elettronico di Informatica. Classe 3za. Capitolo 4. Il linguaggio C++.
 
 import: https://raw.githubusercontent.com/LiaScript/CodeRunner/master/README.md
+
+import: https://raw.githubusercontent.com/liascript-templates/plantUML/master/README.md
 
 -->
 
@@ -30,9 +31,11 @@ Per ogni programma presentato nel testo (pp. 86, 93, 98, 99, 103, 105, 106, 107,
 
 ## Le basi del linguaggio
 
-### Copia del programma
+Es. pag 86
 
-```c
+### Programma a pag. 86 - Somma.cpp
+
+``` c +Somma.cpp
 // Somma.cpp
 #include <iostream>
 using namespace std;
@@ -42,10 +45,90 @@ int main() {
     cin >> a;
     cin >> b;
     s = a + b;
-    cout << s << endl;
+    cout << s;
 
     return 0;
 }
 ```
 @LIA.cpp
 
+### 1. Predict (p. 86)
+
+Il programma dichiara tre variabili intere, `a`, `b` e `s`.
+Legge due numeri interi dati in ingresso memorizzandoli nelle variabili `a` e `b`, calcola la somma di queste due variabili memorizzandola in `s` e ne stampa il valore.
+
+### 2. Run (p. 86)
+
+Il programma conferma la previsione
+
+### 3. Investigate (p. 86)
+
+``` cpp +Somma.cpp
+// Somma.cpp
+#include <iostream>
+using namespace std;
+
+int main() {
+    int a, b, s;
+    cin >> a;
+    cin >> b;
+    s = a + b;
+    cout << s;
+
+    return 0;
+}
+```
+@LIA.evalWithDebug(`["Somma.cpp"]`, `g++ -g -Wall Somma.cpp -o a.out`, `./a.out`)
+
+
+Per usare PythonTutor devo impostare dei valori alle variabili di input.
+Uso 1 e 2.
+
+<iframe width="800" height="500" frameborder="0" src="https://pythontutor.com/iframe-embed.html#code=%23include%20%3Ciostream%3E%0Ausing%20namespace%20std%3B%0A%0Aint%20main%28%29%20%7B%0A%20%20%20%20int%20a,%20b,%20s%3B%0A%20%20%20%20//cin%20%3E%3E%20a%3B%0A%20%20%20%20a%20%3D%201%3B%0A%20%20%20%20//cin%20%3E%3E%20b%3B%0A%20%20%20%20b%20%3D%202%3B%0A%20%20%20%20s%20%3D%20a%20%2B%20b%3B%0A%20%20%20%20cout%20%3C%3C%20s%3B%0A%0A%20%20%20%20return%200%3B%0A%7D&codeDivHeight=400&codeDivWidth=350&cumulative=false&curInstr=6&heapPrimitives=nevernest&origin=opt-frontend.js&py=cpp_g%2B%2B9.3.0&rawInputLstJSON=%5B%5D&textReferences=false"> </iframe>
+
+
+### 4. Modify  (p. 86)
+
+Voglio aggiungere informazioni all'utente per comunicare di immettere i numeri intero, voglio essere più descrittivo e andare a capo nell'output.
+
+``` cpp +Somma.cpp
+// Somma.cpp
+#include <iostream>
+using namespace std;
+
+int main() {
+    int a, b, s;
+    cout << "Immetti un addendo intero: ";
+    cin >> a;
+    cout << "Immetti un altro addendo intero: ";
+    cin >> b;
+    s = a + b;
+    cout << "La somma di " << a << " e " << b << " e' pari a " << s << "." << endl;
+
+    return 0;
+}
+```
+@LIA.cpp
+
+### 5. Make (p. 86)
+
+Scrivo un nuovo programma che calcola il prodotto.
+
+``` cpp +Prodotto.cpp
+// Prodotto.cpp
+#include <iostream>
+using namespace std;
+
+int main() {
+    int a, b, p;
+    cout << "Immetti un moltiplicando intero: ";
+    cin >> a;
+    cout << "Immetti un altro moltiplicando intero: ";
+    cin >> b;
+    p = a * b;
+    cout << "Il prodotto di " << a << " e " << b << " e' pari a " << p << "." << endl;
+
+    return 0;
+}
+```
+@LIA.cpp
