@@ -35,7 +35,7 @@ Per ogni programma presentato nel testo (pp. 317, 318 (2), 319, 321 (2), 322, 32
 
 Es. pag 319
 
-### Programma a pag. 319 - numericasuali.php
+### Numeri casuali - Pag. 319 - numericasuali.php
 
 ``` php +numericasuali.php
 <!DOCTYPE html>
@@ -125,5 +125,79 @@ Uso un ciclo `for`.
         ?>
     </body>
 </html>
+```
+@LIA.php
+
+### Array - Pag. 325 - array.php
+
+``` php +array.php
+<!DOCTYPE html> 
+<html>
+    <head>
+        <title>Array e tipi</title>
+    </head> 
+    <body>
+        <h2>Array: tipi e valori</h2> 
+        <hr> 
+        <?php
+$dati = array(30, "Roma", 12.7, true, null);
+echo 'var_dump($dati[0]) = '; echo var_dump($dati[0]) . '<br>';
+echo 'var_dump($dati[1]) = '; echo var_dump($dati[1]) . '<br>';
+echo 'var_dump($dati[2]) = '; echo var_dump($dati[2]) . '<br>';
+echo 'var_dump($dati[3]) = '; echo var_dump($dati[3]) . '<br>';
+echo 'var_dump($dati[4]) = '; echo var_dump($dati[4]) . '<br>';
+echo '<hr>';
+echo 'count($dati) = '; echo count($dati) . '<br>';
+        ?>
+    </body> 
+</html>
+```
+
+#### 1. Predict (p. 325)
+
+#### 2. Run (p. 325)
+
+``` php +array.php
+<!DOCTYPE html> 
+<html>
+    <head>
+        <title>Array e tipi</title>
+    </head> 
+    <body>
+        <h2>Array: tipi e valori</h2> 
+        <hr> 
+        <?php
+$dati = array(30, "Roma", 12.7, true, null);
+echo 'var_dump($dati[0]) = '; echo var_dump($dati[0]) . '<br>';
+echo 'var_dump($dati[1]) = '; echo var_dump($dati[1]) . '<br>';
+echo 'var_dump($dati[2]) = '; echo var_dump($dati[2]) . '<br>';
+echo 'var_dump($dati[3]) = '; echo var_dump($dati[3]) . '<br>';
+echo 'var_dump($dati[4]) = '; echo var_dump($dati[4]) . '<br>';
+echo '<hr>';
+echo 'count($dati) = '; echo count($dati) . '<br>';
+        ?>
+    </body> 
+</html>
+```
+@LIA.php
+
+#### 3. Investigate (p. 325)
+
+#### 4. Modify (p. 325)
+
+#### 5. Make (p. 325)
+
+
+``` php + classe.php
+<?php
+$classe4ASIA = array(
+    array("Arancioni", "Filippo"),
+    array("Bianchi", "Michele"),
+    array("Celestini", "Kamilia")
+    );
+    
+foreach ($classe4ASIA as $indice => $studente)
+    print ($indice + 1). ". " . $studente[1] . " " . $studente[0] . "\n";
+?>
 ```
 @LIA.php
