@@ -272,6 +272,7 @@ foreach ($persone as $persona) {
 
 ```php
 <?php
+// Esempio di dati
 $persone = array(
     array(
         "cognome" => "Bianchi",
@@ -298,30 +299,46 @@ $persone = array(
         "professione" => "studentessa"
     )
 );
-?>
 
-<table>
-    <caption>Persone</caption>
-    <thead>
-        <tr>
-<?php
-foreach ($persone[0] as $chiave => $valore) {
-    echo "            <th>$chiave</th>\n";
-}
-?>
-        </tr>
-    </thead>
-    <tbody>
-<?php
-foreach($persone as $persona) {
-    echo "        <tr>\n";
-    foreach ($persona as $valore) {
-        echo "            <td>$valore</th>\n";
+// Crea l'intestazione della tabella a partire dalla prima riga
+function build_table_header(array $rows): string {
+    if (count($rows) === 0) {
+        return "";
     }
-    echo "        </tr>\n";
+    $html = "    <thead>\n        <tr>\n";
+    foreach ($rows[0] as $chiave => $valore) {
+        $html .= "            <th>" . htmlspecialchars((string)$chiave) . "</th>\n";
+    }
+    $html .= "        </tr>\n    </thead>\n";
+    return $html;
 }
+
+// Crea il corpo della tabella a partire dall'array di righe
+function build_table_body(array $rows): string {
+    $html = "    <tbody>\n";
+    foreach ($rows as $row) {
+        $html .= "        <tr>\n";
+        foreach ($row as $valore) {
+            $html .= "            <td>" . htmlspecialchars((string)$valore) . "</td>\n";
+        }
+        $html .= "        </tr>\n";
+    }
+    $html .= "    </tbody>\n";
+    return $html;
+}
+
+// Costruisce la tabella completa e la restituisce come stringa
+function build_table(array $rows, string $caption = 'Persone'): string {
+    $html = "<table>\n";
+    $html .= "    <caption>" . htmlspecialchars($caption) . "</caption>\n";
+    $html .= build_table_header($rows);
+    $html .= build_table_body($rows);
+    $html .= "</table>\n";
+    return $html;
+}
+
+// Stampa la tabella generata
+echo build_table($persone);
 ?>
-    </tbody>
-</table>
 ```
 @LIA.php
