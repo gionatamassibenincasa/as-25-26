@@ -340,19 +340,23 @@ int main() {
 ``` c +assegnazione.cpp
 // assegnazione.cpp
 #include <string>
+#include <iostream>
 using namespace std;
 
 int main() {
-    const double raggio = 10;
-    const double area = raggio * raggio * 3.14;
+    double raggio = 10;
+    double area = raggio * raggio * 3.14;
     int tempo_in_sec = 900;
     int durata_in_minuti = tempo_in_sec / 60;
     double spazio = 1000; // 1 km
     double tempo = 6 * 60; // 6 minuti
     double velocita = spazio / tempo;
-    string nome = "Rossi";
+    const string cognome = "Rossi";
+    string nome("Mario");
+    
+    cout << cognome << " " << nome << endl;
 
-return 0;
+    return 0;
 }
 ```
 @LIA.cpp
@@ -366,7 +370,7 @@ In alcuni casi assegna alla variabile un valore letterale, in altri un valore pr
 
 #### 3. Investigate (p. 94)
 
-<iframe width="800" height="500" frameborder="0" src="https://pythontutor.com/iframe-embed.html#code=//%20assegnazione.cpp%0A%23include%20%3Cstring%3E%0Ausing%20namespace%20std%3B%0A%0Aint%20main%28%29%20%7B%0A%20%20%20%20double%20raggio%20%3D%2010%3B%0A%20%20%20%20double%20area%20%3D%20raggio%20*%20raggio%20*%203.14%3B%0A%20%20%20%20int%20tempo_in_sec%20%3D%20900%3B%0A%20%20%20%20int%20durata_in_minuti%20%3D%20tempo_in_sec%20/%2060%3B%0A%20%20%20%20double%20spazio%20%3D%201000%3B%20//%201%20km%0A%20%20%20%20double%20tempo%20%3D%206%20*%2060%3B%20//%206%20minuti%0A%20%20%20%20double%20velocita%20%3D%20spazio%20/%20tempo%3B%0A%20%20%20%20string%20nome%20%3D%20%22Rossi%22%3B%0A%0Areturn%200%3B%0A%7D&codeDivHeight=400&codeDivWidth=350&cumulative=false&curInstr=0&heapPrimitives=nevernest&origin=opt-frontend.js&py=cpp_g%2B%2B9.3.0&rawInputLstJSON=%5B%5D&textReferences=false"> </iframe>
+<iframe width="800" height="500" frameborder="0" src="https://pythontutor.com/iframe-embed.html#code=//%20assegnazione.cpp%0A%23include%20%3Cstring%3E%0A%23include%20%3Ciostream%3E%0Ausing%20namespace%20std%3B%0A%0Aint%20main%28%29%20%7B%0A%20%20%20%20double%20raggio%20%3D%2010%3B%0A%20%20%20%20double%20area%20%3D%20raggio%20*%20raggio%20*%203.14%3B%0A%20%20%20%20int%20tempo_in_sec%20%3D%20900%3B%0A%20%20%20%20int%20durata_in_minuti%20%3D%20tempo_in_sec%20/%2060%3B%0A%20%20%20%20double%20spazio%20%3D%201000%3B%20//%201%20km%0A%20%20%20%20double%20tempo%20%3D%206%20*%2060%3B%20//%206%20minuti%0A%20%20%20%20double%20velocita%20%3D%20spazio%20/%20tempo%3B%0A%20%20%20%20const%20string%20cognome%20%3D%20%22Rossi%22%3B%0A%20%20%20%20string%20nome%28%22Mario%22%29%3B%0A%20%20%20%20%0A%20%20%20%20cout%20%3C%3C%20cognome%20%3C%3C%20%22%20%22%20%3C%3C%20nome%20%3C%3C%20endl%3B%0A%0A%20%20%20%20return%200%3B%0A%7D&codeDivHeight=400&codeDivWidth=350&cppShowMemAddrs=true&cumulative=false&curInstr=15&heapPrimitives=nevernest&origin=opt-frontend.js&py=cpp_g%2B%2B9.3.0&rawInputLstJSON=%5B%5D&textReferences=false"> </iframe>
 
 #### 4. Modify  (p. 94)
 
