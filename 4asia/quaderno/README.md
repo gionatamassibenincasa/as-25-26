@@ -17,7 +17,7 @@ import: https://raw.githubusercontent.com/liascript-templates/plantUML/master/RE
 
 -->
 
-## I dati in rete con pagine PHP
+# I dati in rete con pagine PHP
 
 [Visualizza su LiaScript](https://liascript.github.io/course/?https://raw.githubusercontent.com/gionatamassibenincasa/as-25-26/refs/heads/main/4asia/quaderno/README.md#1)
 
@@ -128,6 +128,8 @@ Uso un ciclo `for`.
 ```
 @LIA.php
 
+# Gli array
+
 ### Array - Pag. 325 - array.php
 
 ``` php +array.php
@@ -199,5 +201,127 @@ $classe4ASIA = array(
 foreach ($classe4ASIA as $indice => $studente)
     print ($indice + 1). ". " . $studente[1] . " " . $studente[0] . "\n";
 ?>
+```
+@LIA.php
+
+### Array associativi
+
+``` php persona.php
+<?php
+// $persona è un array associativo
+// "cognome" è un indice, anche detto chiave
+$persona["cognome"] = "Rossi";
+$persona["nome"] = "Paolo";
+$persona["dataNascita"] = "1956-09-23";
+$persona["professione"] = "calciatore";
+
+$persone = array(
+    $persona,
+    array(
+        "cognome" => "Bianchi",
+        "nome" => "Luca",
+        "dataNascita" => "1988-04-12",
+        "professione" => "insegnante"
+    ),
+    array(
+        "cognome" => "Verdi",
+        "nome" => "Giulia",
+        "dataNascita" => "1995-11-30",
+        "professione" => "ingegnere"
+    ),
+    array(
+        "cognome" => "Neri",
+        "nome" => "Marco",
+        "dataNascita" => "1979-07-05",
+        "professione" => "medico"
+    ),
+    array(
+        "cognome" => "Russo",
+        "nome" => "Elena",
+        "dataNascita" => "2000-02-20",
+        "professione" => "studentessa"
+    )
+);
+
+var_dump($persona);
+foreach ($persona as $chiave => $valore) {
+	echo "Chiave: " . $chiave . "\n";
+	echo "Valore: " . $valore . "\n";
+	echo '$persona[' . $chiave . ']: '. " $persona[$chiave]" . "\n";
+}
+?>
+
+La persona si chiama <?php
+echo $persona["nome"]
+    . " "
+    . $persona["cognome"] . "\n";
+
+foreach ($persone as $persona) {
+    foreach ($persona as $chiave => $valore) {
+        echo "Chiave: " . $chiave . "\n";
+        echo "Valore: " . $valore . "\n";
+        echo '$persona["' . $chiave . '"]: '. " $persona[$chiave]" . "\n";
+    }
+}
+?>
+```
+@LIA.php
+
+
+## Funzioni
+
+```php
+<?php
+$persone = array(
+    array(
+        "cognome" => "Bianchi",
+        "nome" => "Luca",
+        "dataNascita" => "1988-04-12",
+        "professione" => "insegnante"
+    ),
+    array(
+        "cognome" => "Verdi",
+        "nome" => "Giulia",
+        "dataNascita" => "1995-11-30",
+        "professione" => "ingegnere"
+    ),
+    array(
+        "cognome" => "Neri",
+        "nome" => "Marco",
+        "dataNascita" => "1979-07-05",
+        "professione" => "medico"
+    ),
+    array(
+        "cognome" => "Russo",
+        "nome" => "Elena",
+        "dataNascita" => "2000-02-20",
+        "professione" => "studentessa"
+    )
+);
+?>
+
+<table>
+    <caption>Persone</caption>
+    <thead>
+        <tr>
+<?php
+foreach ($persone[0] as $chiave => $valore) {
+    echo "            <th>$chiave</th>\n";
+}
+?>
+        </tr>
+    </thead>
+    <tbody>
+<?php
+foreach($persone as $persona) {
+    echo "        <tr>\n";
+    foreach ($persona as $valore) {
+        echo "            <td>$valore</th>\n";
+    }
+    echo "        </tr>\n";
+}
+?>
+    </tbody>
+</table>
 ```
 @LIA.php
